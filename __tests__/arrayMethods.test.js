@@ -17,7 +17,7 @@ const {
     // getPaginationArray,
     // sparseToDense,
     // findAndConvertTemp
-} = require('../arrayMethods.js');
+} = require('../src/arrayMethods');
 
 describe('JavaScript Array Methods Tests', () => {
 
