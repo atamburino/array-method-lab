@@ -1,4 +1,5 @@
 const {
+    isValidArray,
     swapFirstAndLast,
     // squareFirstIndex,
     // getLongerArray,
@@ -20,6 +21,28 @@ const {
 } = require('../src/arrayMethods');
 
 describe('JavaScript Array Methods Tests', () => {
+
+        test('should return "Invalid input: array is empty" for an empty array', () => {
+          expect(isValidArray([])).toBe("Invalid input: array is empty");
+        });
+
+        test('should return "Invalid input" for an array with only one element', () => {
+          expect(isValidArray([1])).toBe("Invalid input");
+        });
+
+        test('should return "Invalid input" for non-array inputs', () => {
+          expect(isValidArray("not an array")).toBe("Invalid input");
+          expect(isValidArray(123)).toBe("Invalid input");
+          expect(isValidArray({ key: "value" })).toBe("Invalid input");
+          expect(isValidArray(null)).toBe("Invalid input");
+          expect(isValidArray(undefined)).toBe("Invalid input");
+        });
+
+        test("should return true for valid arrays with 2 or more elements", () => {
+          expect(isValidArray([1, 2])).toBe(true);
+          expect(isValidArray(["a", "b", "c"])).toBe(true);
+          expect(isValidArray([true, false, true])).toBe(true);
+        });
 
     // Test for swapFirstAndLast
     test('swapFirstAndLast should swap the first and last elements of the array', () => {
