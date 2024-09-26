@@ -32,16 +32,23 @@ function isValidArray(inputArray) {
     return inputArray;
   }
   
-  module.exports = {
-    isValidArray,
-    swapFirstAndLast,
-  };
   
 // Write a function called squareFirstIndex that takes in an array as a parameter.
 // Return the square of a number held at the first index.
 
+function squareFirstIndex (inputArray) {
+    let firstElement = inputArray[0];
+    const validationResult = isValidArray(inputArray);
 
-
+    if ( isNaN(firstElement) ) {
+        return "Invalid input"    
+    }
+    if (validationResult !== true) {
+      return validationResult; // Returns Invalid Input
+    }
+    let squareOfFirstIndex = firstElement * firstElement;
+    return squareOfFirstIndex;
+}
 
 
 // Write a function called getLongerArray that takes in two arrays as parameters.
@@ -200,3 +207,8 @@ function isValidArray(inputArray) {
 
 
 
+module.exports = {
+    isValidArray,
+    swapFirstAndLast,
+    squareFirstIndex,
+  };
