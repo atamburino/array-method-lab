@@ -82,12 +82,16 @@ function getLongerArray (firstArray, secondArray) {
 // Write a function called arrayHasValue that takes in a value and an array.
 // Return a boolean if the value exists in the array.
 
-
-
-
-
-
-
+function arrayHasValue(searchKey, inputArray) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns Invalid Input
+  }
+  if (searchKey === '') {
+    return 'Invalid Input';
+  }
+  return inputArray.includes(searchKey);
+}
 
 // Write a function called getLastIndexOf that takes an array and a value as parameters.
 // Return the highest index number where that value was found (ie the furthest point it exists in the array)
@@ -229,8 +233,9 @@ function getLongerArray (firstArray, secondArray) {
 
 
 module.exports = {
-    isValidArray,
-    swapFirstAndLast,
-    squareFirstIndex,
-    getLongerArray,
-  };
+  swapFirstAndLast,
+  isValidArray,
+  squareFirstIndex,
+  getLongerArray,
+  arrayHasValue,
+};
