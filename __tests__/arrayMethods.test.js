@@ -3,7 +3,7 @@ const {
     swapFirstAndLast,
     squareFirstIndex,
     getLongerArray,
-    // arrayHasValue,
+    arrayHasValue,
     // getLastIndexOf,
     // getNumberOfTimes,
     // findAboveFreezing,
@@ -68,12 +68,12 @@ describe('JavaScript Array Methods Tests', () => {
         expect(getLongerArray('not an array', [1])).toBe('Invalid input');
     });
 
-    // // Test for arrayHasValue
-    // test('arrayHasValue should return true if value exists in the array', () => {
-    //     expect(arrayHasValue(2, [1, 2, 3])).toBe(true);
-    //     expect(arrayHasValue(4, [1, 2, 3])).toBe(false);
-    //     expect(arrayHasValue(2, 'not an array')).toBe('Invalid input');
-    // });
+    // Test for arrayHasValue
+    test('arrayHasValue should return true if value exists in the array', () => {
+        expect(arrayHasValue(2, [1, 2, 3])).toBe(true);
+        expect(arrayHasValue(4, [1, 2, 3])).toBe(false);
+        expect(arrayHasValue(2, 'not an array')).toBe('Invalid input');
+    });
 
     // // Test for getLastIndexOf
     // test('getLastIndexOf should return the last index of a value', () => {
