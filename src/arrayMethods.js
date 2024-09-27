@@ -1,6 +1,6 @@
 // NOTE: If an input is invalid, simply return the string "Invalid input"
 
-// Helper isValidArray function to validate input
+// Helper isValidArray function to validate input // This helper looks for a least two values in the array
 function isValidArray(inputArray) {
     if (!Array.isArray(inputArray)) {
       return "Invalid input";
@@ -13,6 +13,17 @@ function isValidArray(inputArray) {
     }
     return true;
   }
+
+// Helper function to validate input // This helper does not look at array length -- TODO: Look into a way to simplify this into one helper
+function isValidArraySecondRules(inputArray) {
+  if (!Array.isArray(inputArray)) {
+    return "Invalid input";
+  }
+  if (inputArray.length === '') {
+    return "Invalid input: array is empty";
+  }
+  return true;
+}
 
 // Write a function called swapFirstAndLast that takes in an array as a parameter.
 // Swap the values of the first and last index without using array destructuring.
@@ -54,8 +65,18 @@ function squareFirstIndex (inputArray) {
 // Write a function called getLongerArray that takes in two arrays as parameters.
 // Use a ternary operator and return the array that is longer.
 
-
-
+function getLongerArray (firstArray, secondArray) {
+  const validationResult = isValidArraySecondRules(firstArray);
+  const validationResult2 = isValidArraySecondRules(secondArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns Invalid Input
+  }
+  if (validationResult2 !== true) {
+    return validationResult2; // Returns Invalid Input
+  }
+  let longerArray = firstArray.length > secondArray.length ? firstArray : secondArray;
+  return longerArray;
+}
 
 
 // Write a function called arrayHasValue that takes in a value and an array.
@@ -211,4 +232,5 @@ module.exports = {
     isValidArray,
     swapFirstAndLast,
     squareFirstIndex,
+    getLongerArray,
   };

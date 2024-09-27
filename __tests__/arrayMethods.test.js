@@ -2,7 +2,7 @@ const {
     isValidArray,
     swapFirstAndLast,
     squareFirstIndex,
-    // getLongerArray,
+    getLongerArray,
     // arrayHasValue,
     // getLastIndexOf,
     // getNumberOfTimes,
@@ -60,13 +60,13 @@ describe('JavaScript Array Methods Tests', () => {
         expect(squareFirstIndex([true])).toBe('Invalid input');
     });
 
-    // // Test for getLongerArray
-    // test('getLongerArray should return the longer array', () => {
-    //     expect(getLongerArray([1, 2], [1, 2, 3])).toEqual([1, 2, 3]);
-    //     expect(getLongerArray([5, 4, 3], [1])).toEqual([5, 4, 3]);
-    //     expect(getLongerArray([1], [])).toEqual([1]);
-    //     expect(getLongerArray('not an array', [1])).toBe('Invalid input');
-    // });
+    // Test for getLongerArray
+    test('getLongerArray should return the longer array', () => {
+        expect(getLongerArray([1, 2], [1, 2, 3])).toEqual([1, 2, 3]);
+        expect(getLongerArray([5, 4, 3], [1])).toEqual([5, 4, 3]);
+        expect(getLongerArray([1], [])).toEqual([1]);
+        expect(getLongerArray('not an array', [1])).toBe('Invalid input');
+    });
 
     // // Test for arrayHasValue
     // test('arrayHasValue should return true if value exists in the array', () => {
