@@ -19,7 +19,7 @@ function isValidArraySecondRules(inputArray) {
   if (!Array.isArray(inputArray)) {
     return "Invalid input";
   }
-  if (inputArray.length === 0) {
+  if (inputArray.length === '') {
     return "Invalid input: array is empty";
   }
   return true;
@@ -66,13 +66,13 @@ function squareFirstIndex (inputArray) {
 // Use a ternary operator and return the array that is longer.
 
 function getLongerArray (firstArray, secondArray) {
-  const validationResult = isValidArray(firstArray);
-  const validationResult2 = isValidArray(secondArray);
+  const validationResult = isValidArraySecondRules(firstArray);
+  const validationResult2 = isValidArraySecondRules(secondArray);
   if (validationResult !== true) {
-    return "first fail " + validationResult; // Returns Invalid Input
+    return validationResult; // Returns Invalid Input
   }
   if (validationResult2 !== true) {
-    return "second fail " + validationResult2; // Returns Invalid Input
+    return validationResult2; // Returns Invalid Input
   }
   let longerArray = firstArray.length > secondArray.length ? firstArray : secondArray;
   return longerArray;
