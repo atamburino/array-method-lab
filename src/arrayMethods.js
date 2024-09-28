@@ -336,6 +336,24 @@ function oddValuesAtEvenIndex(inputArray) {
 // Return only an array of only the string values.
 
 
+function getUpperCase(inputArray) {
+
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult;
+  }
+
+  let upperCaseArray = [];
+
+  for (let i = 0; i < inputArray.length; i++) {
+    if (typeof inputArray[i] === 'string') {
+      // Convert string to uppercase and add to the new array
+      upperCaseArray.push(inputArray[i].toUpperCase());
+    }
+  }
+
+  return upperCaseArray;
+}
 
 
 
@@ -407,4 +425,5 @@ module.exports = {
   concatArrays,
   popAndShift,
   oddValuesAtEvenIndex,
+  getUpperCase,
 };
