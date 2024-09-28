@@ -123,9 +123,25 @@ function getLastIndexOf(inputArray, searchValue) {
 // Write a function called getNumberOfTimes that takes in an array and a string.
 // Return a count of how many times the string exists in the array.
 
+function getNumberOfTimes(inputArray, searchString) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns 'Invalid Input'
+  }
+  
+  if (typeof(searchString) !== 'string') {
+    return 'Invalid Input';
+  }
 
+  let count = 0;
 
-
+  for (let i = 0; i < inputArray.length; i++) {
+    if (inputArray[i] === searchString) {
+      count++;
+    }
+  }
+  return count;
+}
 
 
 
@@ -257,4 +273,5 @@ module.exports = {
   getLongerArray,
   arrayHasValue,
   getLastIndexOf,
+  getNumberOfTimes,
 };
