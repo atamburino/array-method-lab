@@ -20,7 +20,7 @@ function isValidArraySecondRules(inputArray) {
     return "Invalid input";
   }
   if (inputArray.length === '') {
-    return "Invalid input: array is empty";
+    return "Invalid input";
   }
   return true;
 }
@@ -97,9 +97,27 @@ function arrayHasValue(searchKey, inputArray) {
 // Return the highest index number where that value was found (ie the furthest point it exists in the array)
 
 
+function getLastIndexOf(inputArray, searchValue) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns 'Invalid Input'
+  }
+  
+  if (inputArray.length === 0) {
+    return -1; 
+  }
+  
+  if (typeof(searchValue) !== 'number' || Number.isNaN(searchValue)) {
+    return 'Invalid Input';
+  }
 
-
-
+  if (!Number.isInteger(searchValue)) {
+    return 'Invalid Input';
+  }
+  
+  let lastIndex = inputArray.lastIndexOf(searchValue);
+  return lastIndex;
+}
 
 
 // Write a function called getNumberOfTimes that takes in an array and a string.
@@ -238,4 +256,5 @@ module.exports = {
   squareFirstIndex,
   getLongerArray,
   arrayHasValue,
+  getLastIndexOf,
 };
