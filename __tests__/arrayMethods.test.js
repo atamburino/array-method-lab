@@ -10,7 +10,7 @@ const {
     returnString,
     sortArrayBasedOnNumber,
     concatArrays,
-    // popAndShift,
+    popAndShift,
     // oddValuesAtEvenIndex,
     // getUpperCase,
     // deleteAllOddValues,
@@ -126,12 +126,12 @@ describe('JavaScript Array Methods Tests', () => {
         expect(concatArrays('Potato', [3, 4])).toBe('Invalid input');
     });
 
-    // // Test for popAndShift
-    // test('popAndShift should pop the last element and shift it to the front', () => {
-    //     expect(popAndShift(['yellow', '5', 6, 'blue'])).toEqual(['blue', 'yellow', '5', 6]);
-    //     expect(popAndShift([1])).toEqual([1]);
-    //     expect(popAndShift('not an array')).toBe('Invalid input');
-    // });
+    // Test for popAndShift
+    test('popAndShift should pop the last element and shift it to the front', () => {
+        expect(popAndShift(['yellow', '5', 6, 'blue'])).toEqual(['blue', 'yellow', '5', 6]);
+        expect(popAndShift([1])).toEqual([1]);
+        expect(popAndShift('not an array')).toBe('Invalid input');
+    });
 
     // // Test for oddValuesAtEvenIndex
     // test('oddValuesAtEvenIndex should return odd values at even indices', () => {

@@ -286,9 +286,25 @@ function concatArrays(inputArray, inputArrayTwo) {
 // Original input array: ["yellow", "green", "blue", "red"]
 // Intended output array: ["red", "yellow", "green", "blue"]
 
+// pop removes the last 
+// shift removes the first
+// unshift adds
 
+function popAndShift(inputArray) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns Invalid Input
+  }
 
+  if (inputArray.length === 0) {
+      return [];
+  }
 
+  let lastElement = inputArray.pop();
+  inputArray.unshift(lastElement);
+
+  return inputArray;
+}
 
 
 
@@ -375,4 +391,5 @@ module.exports = {
   returnString,
   sortArrayBasedOnNumber,
   concatArrays,
+  popAndShift,
 };
