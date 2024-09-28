@@ -11,7 +11,7 @@ const {
     sortArrayBasedOnNumber,
     concatArrays,
     popAndShift,
-    // oddValuesAtEvenIndex,
+    oddValuesAtEvenIndex,
     // getUpperCase,
     // deleteAllOddValues,
     // getCatNumber,
@@ -133,14 +133,14 @@ describe('JavaScript Array Methods Tests', () => {
         expect(popAndShift('not an array')).toBe('Invalid input');
     });
 
-    // // Test for oddValuesAtEvenIndex
-    // test('oddValuesAtEvenIndex should return odd values at even indices', () => {
-    //     expect(oddValuesAtEvenIndex([7, 2, 5, 11])).toEqual([7, 5]);
-    //     expect(oddValuesAtEvenIndex([9, 1, 6, 7, 7, 2, 13])).toEqual([9, 7, 13]);
-    //     expect(oddValuesAtEvenIndex([1, 2, "cat", 3])).toEqual([1]);
-    //     expect(oddValuesAtEvenIndex([5])).toEqual([5]);
-    //     expect(oddValuesAtEvenIndex('not an array')).toBe('Invalid input');
-    // });
+    // Test for oddValuesAtEvenIndex
+    test('oddValuesAtEvenIndex should return odd values at even indices', () => {
+        expect(oddValuesAtEvenIndex([7, 2, 5, 11])).toEqual([7, 5]);
+        expect(oddValuesAtEvenIndex([9, 1, 6, 7, 7, 2, 13])).toEqual([9, 7, 13]);
+        expect(oddValuesAtEvenIndex([1, 2, "cat", 3])).toEqual([1]);
+        expect(oddValuesAtEvenIndex([5])).toEqual([5]);
+        expect(oddValuesAtEvenIndex('not an array')).toBe('Invalid input');
+    });
 
     // // Test for getUpperCase
     // test('getUpperCase should return all strings in uppercase', () => {

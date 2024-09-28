@@ -312,8 +312,22 @@ function popAndShift(inputArray) {
 // Return a new array that contains all the odd values of the original array that were located at an even index.
 
 
+function oddValuesAtEvenIndex(inputArray) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult;
+  }
 
+  // Empty array to hold the result
+  let newArray = [];
 
+  for (let i = 0; i < inputArray.length; i++) {
+    if (i % 2 === 0 && typeof inputArray[i] === 'number' && inputArray[i] % 2 === 1) {
+      newArray.push(inputArray[i]); // Add valid odd numbers to the new array
+    }
+  }
+  return newArray;
+}
 
 
 
@@ -392,4 +406,5 @@ module.exports = {
   sortArrayBasedOnNumber,
   concatArrays,
   popAndShift,
+  oddValuesAtEvenIndex,
 };
