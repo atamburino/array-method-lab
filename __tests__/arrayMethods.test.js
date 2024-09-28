@@ -13,7 +13,7 @@ const {
     popAndShift,
     oddValuesAtEvenIndex,
     getUpperCase,
-    // deleteAllOddValues,
+    deleteAllOddValues,
     // getCatNumber,
     // getPaginationArray,
     // sparseToDense,
@@ -149,13 +149,13 @@ describe('JavaScript Array Methods Tests', () => {
         expect(getUpperCase('not an array')).toBe('Invalid input');
     });
 
-    // // Test for deleteAllOddValues
-    // test('deleteAllOddValues should delete all odd numbers from the array', () => {
-    //     let arr = [1, 2, 3, 4];
-    //     deleteAllOddValues(arr);
-    //     expect(arr).toEqual([, 2, , 4]);
-    //     expect(deleteAllOddValues('not an array')).toBe('Invalid input');
-    // });
+    // Test for deleteAllOddValues
+    test('deleteAllOddValues should delete all odd numbers from the array', () => {
+        let arr = [1, 2, 3, 4];
+        deleteAllOddValues(arr);
+        expect(arr).toEqual([, 2, , 4]);
+        expect(deleteAllOddValues('not an array')).toBe('Invalid input');
+    });
 
     // // Test for sortArrayBasedOnNumber
     // test('sortArrayBasedOnNumber should return the array sorted in ascending order if the number is even or descending order if the number is odd', () => {
