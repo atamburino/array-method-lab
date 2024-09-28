@@ -147,8 +147,26 @@ function getNumberOfTimes(inputArray, searchString) {
 
 // Write a function called findAboveFreezing that takes in an array
 // Return a string literal that says "Temperature found was ---- degrees Farenheit."
+// Did a quick search freezing is 32 degrees Farenheit
 
 
+function findAboveFreezing(inputArray) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns 'Invalid Input'
+  }
+
+  let freezing = 32;
+  let firstTemp
+
+  for (let i = 0; i < inputArray.length; i++) {
+    if (inputArray[i] > freezing) {
+      firstTemp = inputArray[i];
+      break
+    }
+  }
+  return firstTemp;
+}
 
 
 
@@ -274,4 +292,5 @@ module.exports = {
   arrayHasValue,
   getLastIndexOf,
   getNumberOfTimes,
+  findAboveFreezing,
 };
