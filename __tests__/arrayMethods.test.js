@@ -8,7 +8,7 @@ const {
     getNumberOfTimes,
     findAboveFreezing,
     returnString,
-    // sortArrayBasedOnNumber,
+    sortArrayBasedOnNumber,
     // concatArrays,
     // popAndShift,
     // oddValuesAtEvenIndex,
@@ -106,17 +106,17 @@ describe('JavaScript Array Methods Tests', () => {
     });
 
 
-    // // Test for sortArrayBasedOnNumber
-    // test('sortArrayBasedOnNumber should return the array sorted in ascending order if the number is even or descending order if the number is odd', () => {
-    //     expect(sortArrayBasedOnNumber([3, 1, 4, 1, 5], 2)).toEqual([1, 1, 3, 4, 5]);
-    //     expect(sortArrayBasedOnNumber([3, 1, 4, 1, 5], 3)).toEqual([5, 4, 3, 1, 1]);
-    //     expect(sortArrayBasedOnNumber([3, "a", 4, "b"], 3)).toBe('Invalid input');
-    //     expect(sortArrayBasedOnNumber(["b", "a", "c"], 0)).toEqual(["a", "b", "c"]);
-    //     expect(sortArrayBasedOnNumber(["a", "c", "b"], 1)).toEqual(["c", "b", "a"]);
-    //     expect(sortArrayBasedOnNumber("not an array", 2)).toBe('Invalid input');
-    //     expect(sortArrayBasedOnNumber([10, 2, 8, 4], 4)).toEqual([2, 4, 8, 10]);
-    //     expect(sortArrayBasedOnNumber([10, 2, 8, 4], 7)).toEqual([10, 8, 4, 2]);
-    // });
+    // Test for sortArrayBasedOnNumber
+    test('sortArrayBasedOnNumber should return the array sorted in ascending order if the number is even or descending order if the number is odd', () => {
+        expect(sortArrayBasedOnNumber([3, 1, 4, 1, 5], 2)).toEqual([1, 1, 3, 4, 5]);
+        expect(sortArrayBasedOnNumber([3, 1, 4, 1, 5], 3)).toEqual([5, 4, 3, 1, 1]);
+        expect(sortArrayBasedOnNumber([3, "a", 4, "b"], 3)).toBe('Invalid input');
+        expect(sortArrayBasedOnNumber(["b", "a", "c"], 0)).toEqual(["a", "b", "c"]);
+        expect(sortArrayBasedOnNumber(["a", "c", "b"], 1)).toEqual(["c", "b", "a"]);
+        expect(sortArrayBasedOnNumber("not an array", 2)).toBe('Invalid input');
+        expect(sortArrayBasedOnNumber([10, 2, 8, 4], 4)).toEqual([2, 4, 8, 10]);
+        expect(sortArrayBasedOnNumber([10, 2, 8, 4], 7)).toEqual([10, 8, 4, 2]);
+    });
 
 
     // // Test for concatArrays
