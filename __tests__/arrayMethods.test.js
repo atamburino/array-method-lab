@@ -14,7 +14,7 @@ const {
     oddValuesAtEvenIndex,
     getUpperCase,
     deleteAllOddValues,
-    // getCatNumber,
+    getCatNumber,
     // getPaginationArray,
     // sparseToDense,
     // findAndConvertTemp
@@ -164,14 +164,14 @@ describe('JavaScript Array Methods Tests', () => {
 
     // })
 
-    // // Test for getCatNumber
-    // test('getCatNumber should return the age of the first cat with the given name', () => {
-    //     let cats = [["Tigger", 8], ["Nancy", 6]];
-    //     expect(getCatNumber(cats, "Tigger")).toBe(8);
-    //     expect(getCatNumber(cats, "Nancy")).toBe(6);
-    //     expect(getCatNumber(cats, "Whiskers")).toBe('Cat not found');
-    //     expect(getCatNumber('not an array', 'Tigger')).toBe('Invalid input');
-    // });
+    // Test for getCatNumber
+    test('getCatNumber should return the age of the first cat with the given name', () => {
+        let cats = [["Tigger", 8], ["Nancy", 6]];
+        expect(getCatNumber(cats, "Tigger")).toBe(8);
+        expect(getCatNumber(cats, "Nancy")).toBe(6);
+        expect(getCatNumber(cats, "Whiskers")).toBe('Cat not found');
+        expect(getCatNumber('not an array', 'Tigger')).toBe('Invalid input');
+    });
 
     // // Test for getPaginationArray
     // test('getPaginationArray should return the correct page of items (5 per page)', () => {
