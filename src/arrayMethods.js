@@ -202,7 +202,9 @@ function returnString(inputArray) {
 // If the number is even, return the array sorted in ascending order
 
 
+function sortArrayBasedOnNumber() {
 
+}
 
 
 
@@ -308,4 +310,5 @@ module.exports = {
   getNumberOfTimes,
   findAboveFreezing,
   returnString,
+  sortArrayBasedOnNumber,
 };
