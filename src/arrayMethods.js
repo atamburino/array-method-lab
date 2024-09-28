@@ -256,11 +256,29 @@ function sortArrayBasedOnNumber(inputArray, sortRule) {
 // Write a function called concatArrays that takes in two arrays as parameters.
 // Return the concatenation of the two arrays in order as long as neither holds a string as a value at any index.
 
+function concatArrays(inputArray, inputArrayTwo) {
+  // Check if the inputs are arrays
+  if (!Array.isArray(inputArray) || !Array.isArray(inputArrayTwo)) {
+      return 'Invalid input';
+  }
 
+  // Check if either array contains a string
+  let hasStringInFirst = inputArray.some(function(item) {
+      return typeof(item) === 'string';
+  });
 
+  let hasStringInSecond = inputArrayTwo.some(function(item) {
+      return typeof(item) === 'string';
+  });
 
+  // If either array contains a string, return the error message
+  if (hasStringInFirst || hasStringInSecond) {
+      return 'Cannot concatenate arrays with strings';
+  }
 
-
+  // If both arrays are valid, concatenate and return them
+  return inputArray.concat(inputArrayTwo);
+}
 
 
 // Write a function called popAndShift that takes in an array as a parameter.
@@ -356,4 +374,5 @@ module.exports = {
   findAboveFreezing,
   returnString,
   sortArrayBasedOnNumber,
+  concatArrays,
 };

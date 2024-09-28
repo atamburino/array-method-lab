@@ -9,7 +9,7 @@ const {
     findAboveFreezing,
     returnString,
     sortArrayBasedOnNumber,
-    // concatArrays,
+    concatArrays,
     // popAndShift,
     // oddValuesAtEvenIndex,
     // getUpperCase,
@@ -119,12 +119,12 @@ describe('JavaScript Array Methods Tests', () => {
     });
 
 
-    // // Test for concatArrays
-    // test('concatArrays should concatenate two arrays as long as they do not contain strings', () => {
-    //     expect(concatArrays([1, 2], [3, 4])).toEqual([1, 2, 3, 4]);
-    //     expect(concatArrays([1, '2'], [3, 4])).toBe('Cannot concatenate arrays with strings');
-    //     expect(concatArrays('Potato', [3, 4])).toBe('Invalid input');
-    // });
+    // Test for concatArrays
+    test('concatArrays should concatenate two arrays as long as they do not contain strings', () => {
+        expect(concatArrays([1, 2], [3, 4])).toEqual([1, 2, 3, 4]);
+        expect(concatArrays([1, '2'], [3, 4])).toBe('Cannot concatenate arrays with strings');
+        expect(concatArrays('Potato', [3, 4])).toBe('Invalid input');
+    });
 
     // // Test for popAndShift
     // test('popAndShift should pop the last element and shift it to the front', () => {
