@@ -366,10 +366,22 @@ function getUpperCase(inputArray) {
 
 
 
+function deleteAllOddValues(inputArray) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns 'Invalid input' if validation fails
+  }
 
+  for (let i = 0; i < inputArray.length; i++) {
+    let currentValue = inputArray[i];
 
+    if (!isNaN(currentValue) && Number(currentValue) % 2 !== 0) {
+      delete inputArray[i]; // Delete the odd number
+    }
+  }
 
-
+  return inputArray; // Return the updated array
+}
 
 
 // Write a function called getCatNumber that takes in an array of nested arrays as a first parameter, and a string of a cat's name a the second parameter.
@@ -426,4 +438,5 @@ module.exports = {
   popAndShift,
   oddValuesAtEvenIndex,
   getUpperCase,
+  deleteAllOddValues,
 };
