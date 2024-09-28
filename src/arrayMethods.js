@@ -169,15 +169,27 @@ function findAboveFreezing(inputArray) {
 }
 
 
-
-
-
-
 // Write a function called returnString that takes an array as a parameter.
 // Return the array as a string with an ampersand as the separator.
 
 
+function returnString(inputArray) {
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Returns 'Invalid Input'
+  }
 
+  // let freezing = 32;
+  // let firstTemp
+
+  // for (let i = 0; i < inputArray.length; i++) {
+  //   if (inputArray[i] > freezing) {
+  //     firstTemp = inputArray[i];
+  //     break
+  //   }
+  // }
+  // return firstTemp;
+}
 
 
 
@@ -293,4 +305,5 @@ module.exports = {
   getLastIndexOf,
   getNumberOfTimes,
   findAboveFreezing,
+  returnString,
 };
