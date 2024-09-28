@@ -146,8 +146,8 @@ function getNumberOfTimes(inputArray, searchString) {
 
 
 // Write a function called findAboveFreezing that takes in an array
-// Return a string literal that says "Temperature found was ---- degrees Farenheit."
-// Did a quick search freezing is 32 degrees Farenheit
+// Return a string literal that says "Temperature found was ---- degrees Fahrenheit."
+// Did a quick search freezing is 32 degrees Fahrenheit
 
 
 function findAboveFreezing(inputArray) {
@@ -202,14 +202,59 @@ function returnString(inputArray) {
 // If the number is even, return the array sorted in ascending order
 
 
-function sortArrayBasedOnNumber() {
+function sortArrayBasedOnNumber(inputArray, sortRule) {
 
+  const validationResult = isValidArraySecondRules(inputArray);
+  if (validationResult !== true) {
+    return validationResult; // Return validation error message
+  }
+
+  // Flags
+  let hasNumbers = false; 
+  let hasStrings = false;
+
+  for ( i = 0; i < inputArray.length; i++) {
+    if (typeof(inputArray[i]) === 'number') {
+      hasNumbers = true;
+    } else if (typeof inputArray[i] === 'string') {
+      hasStrings = true;
+    }
+  }
+
+  if (hasNumbers && hasStrings) {
+      return 'Invalid input';
+  }
+
+  let sortFunction;
+  if (hasNumbers) {
+    // sort numerically
+    sortFunction = function(a, b) {
+      return a - b; // Compare numbers for sorting
+    };
+  } else {
+    // sort strings - lexicographically - dictionary order
+    sortFunction = function(a, b) {
+    // localeCompare is interesting I came across this on a search and still need to wrap my head around it fully. Overall I have the base grasp but this looks to have some serious power. 
+      return a.localeCompare(b); // Compare strings for sorting
+    };
+  }
+
+  // Sort the array based on the sortRule
+  if (sortRule % 2 === 0) {
+    // If sortRule is even, sort in ascending order
+    return inputArray.sort(sortFunction);
+  } else {
+    // If sortRule is odd, sort in descending order
+    return inputArray.sort(sortFunction).reverse(); // Sort and then reverse
+  }
 }
 
 
 
+
+
 // Write a function called concatArrays that takes in two arrays as parameters.
-// Return the concatonation of the two arrays in order as long as neither holds a string as a value at any index.
+// Return the concatenation of the two arrays in order as long as neither holds a string as a value at any index.
 
 
 
@@ -220,7 +265,7 @@ function sortArrayBasedOnNumber() {
 
 // Write a function called popAndShift that takes in an array as a parameter.
 // Example input versus output:
-// Original input array: ["yelow", "green", "blue", "red"]
+// Original input array: ["yellow", "green", "blue", "red"]
 // Intended output array: ["red", "yellow", "green", "blue"]
 
 
