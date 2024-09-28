@@ -387,10 +387,31 @@ function deleteAllOddValues(inputArray) {
 // Write a function called getCatNumber that takes in an array of nested arrays as a first parameter, and a string of a cat's name a the second parameter.
 // Return the age of the first cat found with that name.
 
+function getCatNumber(inputArrayNested, catsName) {
+  const validationResult = isValidArraySecondRules(inputArrayNested);
+  if (validationResult !== true) {
+    return 'Invalid input';
+  }
 
+  if (typeof catsName !== 'string') {
+    return 'Invalid name';
+  }
 
+  if (inputArrayNested.length === 0) {
+    return 'Cat not found'; // Return 'Cat not found' for empty array
+  }
 
-
+  for (let i = 0; i < inputArrayNested.length; i++) {
+    if (inputArrayNested[i][0] === catsName) {
+      if (typeof inputArrayNested[i][1] === 'number' && !isNaN(inputArrayNested[i][1])) {
+        return inputArrayNested[i][1]; // Return the age of the cat
+      } else {
+        return 'Invalid age';
+      }
+    }
+  }
+  return 'Cat not found';
+}
 
 
 // Stretch Goal #1:
@@ -439,4 +460,5 @@ module.exports = {
   oddValuesAtEvenIndex,
   getUpperCase,
   deleteAllOddValues,
+  getCatNumber,
 };
