@@ -15,7 +15,7 @@ const {
     getUpperCase,
     deleteAllOddValues,
     getCatNumber,
-    // getPaginationArray,
+    getPaginationArray,
     // sparseToDense,
     // findAndConvertTemp
 } = require('../src/arrayMethods');
@@ -173,14 +173,14 @@ describe('JavaScript Array Methods Tests', () => {
         expect(getCatNumber('not an array', 'Tigger')).toBe('Invalid input');
     });
 
-    // // Test for getPaginationArray
-    // test('getPaginationArray should return the correct page of items (5 per page)', () => {
-    //     let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    //     expect(getPaginationArray(items, 1)).toEqual([1, 2, 3, 4, 5]);
-    //     expect(getPaginationArray(items, 2)).toEqual([6, 7, 8, 9, 10]);
-    //     expect(getPaginationArray(items, 3)).toBe('Page not found');
-    //     expect(getPaginationArray('not an array', 1)).toBe('Invalid input');
-    // });
+    // Test for getPaginationArray
+    test('getPaginationArray should return the correct page of items (5 per page)', () => {
+        let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        expect(getPaginationArray(items, 1)).toEqual([1, 2, 3, 4, 5]);
+        expect(getPaginationArray(items, 2)).toEqual([6, 7, 8, 9, 10]);
+        expect(getPaginationArray(items, 3)).toBe('Page not found');
+        expect(getPaginationArray('not an array', 1)).toBe('Invalid input');
+    });
 
     // // Test for sparseToDense
     // test('sparseToDense should convert sparse arrays to dense arrays', () => {

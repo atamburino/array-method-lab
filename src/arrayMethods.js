@@ -419,8 +419,24 @@ function getCatNumber(inputArrayNested, catsName) {
 // Only five items from the array can be shown on a given web page when pagination is clicked. They must be grouped in their original order.
 // Return a new array. At each index of the new array will be the five items shown for each page of pagination.
 
+function getPaginationArray(inputArray, pageNumber) {
+  if (!Array.isArray(inputArray)) {
+      return 'Invalid input';
+  }
+  let itemsPerPage = 5;
+  
+  let startIndex = (pageNumber - 1) * itemsPerPage;
+  let endIndex = startIndex + itemsPerPage;
 
+  // Check if the page number is out of bounds
+  if (startIndex >= inputArray.length) {
+      return 'Page not found';
+  }
 
+  return inputArray.slice(startIndex, endIndex);
+}
+
+ 
 
 
 
@@ -461,4 +477,5 @@ module.exports = {
   getUpperCase,
   deleteAllOddValues,
   getCatNumber,
+  getPaginationArray,
 };
